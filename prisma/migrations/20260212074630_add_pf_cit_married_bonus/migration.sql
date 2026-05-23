@@ -1,0 +1,16 @@
+-- AlterTable
+ALTER TABLE "employee_pay_settings" ADD COLUMN     "advanceDeduction" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "citAmount" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "citEnabled" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "employeePfRate" DECIMAL(5,2) NOT NULL DEFAULT 10,
+ADD COLUMN     "employerPfRate" DECIMAL(5,2) NOT NULL DEFAULT 10,
+ADD COLUMN     "isMarried" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "pfEnabled" BOOLEAN NOT NULL DEFAULT false;
+
+-- AlterTable
+ALTER TABLE "payroll_records" ADD COLUMN     "advanceDeduction" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "citDeduction" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "dashainBonus" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "employeePf" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "employerPf" DECIMAL(12,2) NOT NULL DEFAULT 0,
+ADD COLUMN     "isMarried" BOOLEAN NOT NULL DEFAULT false;

@@ -1,0 +1,41 @@
+# Build artefacts
+node_modules
+dist
+coverage
+
+# VCS / editor / OS
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+*.swp
+
+# Tests (not needed in production image)
+__tests__
+**/__tests__
+*.test.ts
+*.spec.ts
+jest.config.ts
+jest.setup.ts
+tsconfig.test.json
+setup-testing.sh
+testing.md
+jest-cheatsheet.md
+
+# Local-only / scratch files
+.env
+.env.local
+.env.*.local
+check-db.ts
+check.sql
+fix_typscript.py
+
+# Docker itself
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,15 @@
+-- AlterTable
+ALTER TABLE "org_subscriptions" ADD COLUMN     "overrideFeatureAuditLog" BOOLEAN,
+ADD COLUMN     "overrideFeatureDownloadAuditLog" BOOLEAN,
+ADD COLUMN     "overrideFeatureDownloadLeaveRecords" BOOLEAN,
+ADD COLUMN     "overrideFeatureDownloadPayslips" BOOLEAN,
+ADD COLUMN     "overrideFeatureDownloadReports" BOOLEAN,
+ADD COLUMN     "overrideFeatureFileDownload" BOOLEAN,
+ADD COLUMN     "overrideFeatureFullPayroll" BOOLEAN,
+ADD COLUMN     "overrideFeatureLeave" BOOLEAN,
+ADD COLUMN     "overrideFeatureManualCorrection" BOOLEAN,
+ADD COLUMN     "overrideFeatureNotifications" BOOLEAN,
+ADD COLUMN     "overrideFeatureOnboarding" BOOLEAN,
+ADD COLUMN     "overrideFeaturePayrollWorkflow" BOOLEAN,
+ADD COLUMN     "overrideFeatureReports" BOOLEAN,
+ADD COLUMN     "overrideFeatureTotp" BOOLEAN;
