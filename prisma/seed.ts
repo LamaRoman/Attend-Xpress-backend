@@ -41,21 +41,6 @@ function isSaturday(date: Date): boolean {
   return date.getDay() === 6;
 }
 
-/**
- * Read a required env var, throwing with a clear message if missing.
- * Used for seed credentials so we never fall back to a hardcoded
- * password in source. See backend/.env.example for the full list.
- */
-function requireEnv(name: string): string {
-  const v = process.env[name];
-  if (!v || v.trim() === '') {
-    throw new Error(
-      `Missing required env var "${name}" for seeding. ` +
-      `See backend/.env.example for required SEED_* variables.`
-    );
-  }
-  return v;
-}
 
 // ============================================================
 // MAIN
@@ -65,15 +50,13 @@ async function main() {
   console.log('🌱 Seeding database...\n');
 
   // ============================================================
-  // SEED CREDENTIALS — read once from env, fail fast if missing.
-  // No fallback defaults: hardcoded passwords were removed in
-  // commit 4b0edb1 (2026-04-05). Set these in backend/.env.
+  // SEED CREDENTIALS — hardcoded for local dev/testing only.
   // ============================================================
-  const superAdminEmail = process.env.SUPER_ADMIN_EMAIL || 'admin@smartattendance.com';
-  const superAdminPassword = requireEnv('SUPER_ADMIN_PASSWORD');
-  const orgAdminPassword = requireEnv('SEED_ORG_ADMIN_PASSWORD');
-  const employeePassword = requireEnv('SEED_EMPLOYEE_PASSWORD');
-  const employeePin = requireEnv('SEED_EMPLOYEE_PIN');
+  const superAdminEmail = 'admin@smartattendance.com';
+  const superAdminPassword = 'Admin@1234';
+  const orgAdminPassword = 'OrgAdmin@1234';
+  const employeePassword = 'Employee@1234';
+  const employeePin = '1234';
 
   // ============================================================
   // 1. SUPER ADMIN
