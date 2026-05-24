@@ -19,6 +19,7 @@ import { startPriceExpiryJob } from './jobs/price-expiry.job';
 import { startGracePeriodJob } from './jobs/grace-period.job';
 import { startAbandonedJob } from './jobs/abandoned.job';
 import { startMidnightAutoCloseJob } from './jobs/midnight-autoclose.job';
+import { setupSwagger } from './swagger';
 
 // Route imports
 import authRoutes from './routes/auth';
@@ -240,6 +241,9 @@ const versionHeader = (req: express.Request, res: express.Response, next: expres
 
 // Versioned API mount
 app.use('/api/v1', versionHeader, v1Router);
+
+// Swagger UI — available at /api-docs
+setupSwagger(app);
 
 // ============================================================
 // Error Handler (must be last)
